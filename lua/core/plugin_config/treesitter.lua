@@ -1,0 +1,23 @@
+require('nvim-treesitter.configs').setup {
+    ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "rust",
+        "html",
+        "javascript",
+        "css",
+        "json"
+    },
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true
+    },
+    autotag = {
+        enable = true
+    },
+    rainbow = {
+        enable = true
+    }
+}
