@@ -1,14 +1,19 @@
 local servers = {
 	"sumneko_lua",
+	"cssls",
+	"html",
+	-- "bashls",
+	"jsonls",
+	-- "yamlls",
 }
 
 local settings = {
 	ui = {
 		border = "none",
 		icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
 		},
 	},
 	log_level = vim.log.levels.INFO,
@@ -31,7 +36,7 @@ local opts = {}
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("core.plugin_config.lsp.handlers").on_attach,
-		capabilitles = require("core.plugin_config.lsp.handlers").capabilities,
+		capabilities = require("core.plugin_config.lsp.handlers").capabilities,
 	}
 
 	server = vim.split(server, "@")[1]
