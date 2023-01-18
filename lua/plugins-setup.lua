@@ -58,7 +58,6 @@ return packer.startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use "turbio/bracey.vim"
-    use 'glepnir/dashboard-nvim'
 
     if packer_bootstrap then
         require('packer').sync()
