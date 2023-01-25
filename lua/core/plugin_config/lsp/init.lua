@@ -1,8 +1,11 @@
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-  return
+	return
 end
 
-require "core.plugin_config.lsp.mason"
+require("core.plugin_config.lsp.mason")
 require("core.plugin_config.lsp.handlers").setup()
-require "core.plugin_config.lsp.null-ls"
+require("core.plugin_config.lsp.null-ls")
+require("mason-null-ls").setup({
+	automatic_setup = true,
+})
