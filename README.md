@@ -27,3 +27,26 @@
 |     Rename     | \<leader\>lr |
 | Signature Help | \<leader\>ls |
 |   Set LocList  | \<leader\>lq |
+
+### Telescope
+|  **Name**  |       **Value**      |
+|:----------:|:--------------------:|
+| Find Files |        Ctrl+p        |
+|  Old Files | \<leader\>\<leader\> |
+|  Live Grep |     \<leader\>fg     |
+|  Help Tags |     \<leader\>fh     |
+
+### Nvim-Tree
+|     **Name**     | **Value** |
+|:----------------:|:---------:|
+| Find File Toggle |   Ctrl+n  |
+
+### CMP
+|       **Name**       | **Value** |
+|:--------------------:|:---------:|
+| Select Previous Item |   Ctrl+k  |
+|   Select Next Item   |   Ctrl+j  |
+|     Scroll Doc Up    |   Ctrl+b  |
+|    Scroll Doc Down   |   Ctrl+f  |
+|         Close        |   Ctrl+e  |
+|        Confirm       |   Enter   |
