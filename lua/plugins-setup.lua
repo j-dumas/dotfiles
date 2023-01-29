@@ -30,7 +30,6 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("windwp/nvim-ts-autotag")
-	use("p00f/nvim-ts-rainbow")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
