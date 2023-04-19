@@ -1,10 +1,7 @@
 local servers = {
-	"sumneko_lua",
 	"cssls",
 	"html",
-	-- "bashls",
 	"jsonls",
-	-- "yamlls",
 }
 
 local settings = {

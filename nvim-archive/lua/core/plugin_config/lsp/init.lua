@@ -9,3 +9,4 @@ require("core.plugin_config.lsp.null-ls")
 require("mason-null-ls").setup({
 	automatic_setup = true,
 })
+require("core.plugin_config.lsp.inc_rename")

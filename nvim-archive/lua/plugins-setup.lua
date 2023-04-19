@@ -60,6 +60,12 @@ return packer.startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("manzeloth/live-server")
+	use({
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
