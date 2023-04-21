@@ -10,9 +10,8 @@ local sources = {
 
   -- webdev stuff
   b.formatting.prettier.with {
-    filetypes = { "html", "markdown", "css", "js", "json" },
     extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-  }, -- so prettier works only on these filetypes
+  },
 
   -- Lua
   b.formatting.stylua,
