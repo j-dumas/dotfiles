@@ -1,4 +1,4 @@
----@type ChadrcConfig
+--@type ChadrcConfig
 local M = {}
 
 -- Path to overriding theme and highlights files
@@ -12,25 +12,29 @@ M.ui = {
 
   nvdash = {
     load_on_startup = true,
-  },tabufline = {
-    enabled = false
+  },
+  tabufline = {
+    enabled = false,
   },
   statusline = {
-    overriden_modules = function()
-      local st_modules = require "nvchad_ui.statusline.default"
-      -- this is just default table of statusline modules
-  
-      return {
-        fileInfo = function()
-          if (vim.bo[0].modified and "%") then
-            return st_modules.fileInfo():gsub('%#St_file_sep# ', '') .. " [+] " .. "%#St_file_sep#" .. " "
-          else
-            return st_modules.fileInfo()
-          end
-        end,
-      }
+    overriden_modules = function(modules)
+      if vim.bo[0].modified and "%" then
+        modules[2] = (function()
+          return modules[2] .. "%#StText# " .. " [+] "
+        end)()
+      end
+      --
+      -- return {
+      --   fileInfo = function()
+      --     if vim.bo[0].modified and "%" then
+      --       return st_modules.fileInfo():gsub("%#St_file_sep# ", "") .. " [+] " .. "%#St_file_sep#" .. " "
+      --     else
+      --       return st_modules.fileInfo()
+      --     end
+      --   end,
+      -- }
     end,
-  }
+  },
 }
 
 M.plugins = "custom.plugins"
