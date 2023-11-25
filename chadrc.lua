@@ -5,7 +5,7 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "nightfox",
+  theme = "chadracula",
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -23,16 +23,6 @@ M.ui = {
           return modules[2] .. "%#StText# " .. " [+] "
         end)()
       end
-      --
-      -- return {
-      --   fileInfo = function()
-      --     if vim.bo[0].modified and "%" then
-      --       return st_modules.fileInfo():gsub("%#St_file_sep# ", "") .. " [+] " .. "%#St_file_sep#" .. " "
-      --     else
-      --       return st_modules.fileInfo()
-      --     end
-      --   end,
-      -- }
     end,
   },
 }
