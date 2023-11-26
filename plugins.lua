@@ -53,6 +53,10 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
 }
 
 return plugins
