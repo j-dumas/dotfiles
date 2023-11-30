@@ -6,5 +6,4 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
-vim.opt.mouse = ""
 vim.opt.relativenumber = true
