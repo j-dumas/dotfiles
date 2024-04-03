@@ -37,9 +37,6 @@ local plugins = {
         "c",
         "cpp",
       },
-      highlight = {
-        enable = true,
-      },
     },
   },
 
