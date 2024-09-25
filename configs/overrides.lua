@@ -6,9 +6,6 @@ M.treesitter = {
     "lua",
     "html",
     "css",
-    "javascript",
-    "typescript",
-    "tsx",
     "c",
     "markdown",
     "markdown_inline",
@@ -18,25 +15,6 @@ M.treesitter = {
     -- disable = {
     --   "python"
     -- },
-  },
-}
-
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "json-lsp",
-    "typescript-language-server",
-    "prettier",
-
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
   },
 }
 

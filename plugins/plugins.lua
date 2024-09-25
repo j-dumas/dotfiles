@@ -1,7 +1,6 @@
-local overrides = require "custom.configs.overrides"
+local overrides = require "configs.overrides"
 
----@type NvPluginSpec[]
-local plugins = {
+local nvchad = {
 
   -- Override plugin definition options
 
@@ -12,13 +11,13 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require "configs.null-ls"
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require "nvchad.configs.lspconfig"
+      require "configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
@@ -32,6 +31,8 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "vimdoc",
+        "luadoc",
         "vim",
         "lua",
         "c",
@@ -56,7 +57,19 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
+    enabled = function()
+      if jit then
+        return jit.os == "Linux"
+      else
+        return false
+      end
+    end,
+  },
+  {
+    "lervag/vimtex",
+    lazy = true, -- we don't want to lazy load VimTeX
+    ft = "tex",
   },
 }
 
-return plugins
+return nvchad

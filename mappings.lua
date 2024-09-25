@@ -1,19 +1,15 @@
----@type MappingsTable
-local M = {}
+require "nvchad.mappings"
 
-M.general = {
-  n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<CR>"] = { "o<ESC>", "Newline" },
+local map = vim.keymap.set
 
-    -- Tmux Navigator
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
-  },
-}
+map("n", "<CR>", "o<ESC>", { desc = "Newline" })
 
--- more keybinds!
-
-return M
+-- Tmux Navigator
+if jit then
+  if jit.os == "Linux" then
+    map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "Tmux Window Left" })
+    map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Tmux Window Right" })
+    map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Tmux Window Down" })
+    map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Tmux Window Up" })
+  end
+end
