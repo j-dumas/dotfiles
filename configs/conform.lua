@@ -1,8 +1,22 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    css = { "prettier" },
+    html = { "prettier" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    c = { "clang_format" },
+    tex = { "Latexindent" },
+  },
+
+  formatters = {
+    prettier = {
+      args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    },
+  },
+
+  default_format_opts = {
+    lsp_format = "fallback",
   },
 
   -- format_on_save = {
