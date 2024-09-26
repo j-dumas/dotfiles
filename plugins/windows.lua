@@ -10,5 +10,7 @@ local plugins = {
 if jit then
   if jit.os == "Windows" then
     return plugins
+  else
+    return {}
   end
 end
