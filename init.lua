@@ -6,4 +6,4 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
-vim.g.maplocalleader = "\"
+vim.g.maplocalleader = "\\"
