@@ -36,6 +36,16 @@ local nvchad = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require "cmp"
+      opts.sources = cmp.config.sources {
+        { name = "vimtex" },
+      }
+    end,
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -60,6 +70,7 @@ local nvchad = {
     lazy = true, -- we don't want to lazy load VimTeX
     ft = "tex",
   },
+  { "micangl/cmp-vimtex" },
 }
 
 return nvchad
