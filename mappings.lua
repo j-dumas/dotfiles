@@ -13,3 +13,7 @@ if jit then
     map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Tmux Window Up" })
   end
 end
+
+map({ "n", "t" }, "<A-g>", function()
+  require("nvchad.term").toggle { pos = "float", id = "LazyGit", cmd = "lazygit" }
+end, { desc = "Opening LazyGit in floating terminal" })
