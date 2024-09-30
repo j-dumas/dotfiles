@@ -24,7 +24,7 @@ M.ui = {
       "██   ██   ██ ██   ██ ██   ██ ██      ██   ██ ██ ",
       " ██ ████ ██  ██   ██ ██████  ██      ██   ██ ██ ",
       " ████  ████  ██   ██ ██   ██ ██      ██   ██    ",
-      "  ██    ██    █████  ██   ██ ███████ ██████  ██ ",
+      "  ██    ██    █████  ██   ██ ███████ ████ ",
     },
 
     buttons = {
@@ -56,24 +56,35 @@ M.ui = {
       end,
     },
   },
+}
 
-  mason = {
-    cmd = true,
-    pkgs = {
-      -- lua stuff
-      "lua-language-server",
-      "stylua",
+M.mason = {
+  cmd = true,
+  pkgs = {
+    -- lua stuff
+    "lua-language-server",
+    "stylua",
 
-      -- web dev stuff
-      "css-lsp",
-      "html-lsp",
-      "json-lsp",
-      "prettier",
+    -- web dev stuff
+    "css-lsp",
+    "html-lsp",
+    "json-lsp",
+    "prettier",
 
-      -- c/cpp stuff
-      "clangd",
-      "clang-format",
-    },
+    -- c/cpp stuff
+    "clangd",
+    "clang-format",
+  },
+}
+
+M.term = {
+  float = {
+    relative = "editor",
+    row = 0.1,
+    col = 0.15,
+    width = 0.7,
+    height = 0.7,
+    border = "double",
   },
 }
 
