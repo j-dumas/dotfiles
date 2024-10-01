@@ -1,6 +1,7 @@
 require "nvchad.options"
 
 vim.opt.relativenumber = true
+vim.opt.clipboard = "unnamedplus"
 
 -- Use powershell on Windows
 if jit then
