@@ -1,5 +1,5 @@
 if ! [ -n "$TMUX" ]; then 
-  eval "$(ssh-agent -s)"
+  # eval "$(ssh-agent -s)"
   tmux new-session -A -s main
 else
   eval "$(tmux show-environment -s)"
@@ -88,13 +88,19 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
+  ssh-agent
 )
+
+zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent lazy yes
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
+export MANPATH="$MANTPATH:/usr/local/texlive/2024/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -117,6 +123,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
