@@ -17,3 +17,11 @@ end
 map({ "n", "t" }, "<A-g>", function()
   require("nvchad.term").toggle { pos = "float", id = "LazyGit", cmd = "lazygit" }
 end, { desc = "Opening LazyGit in floating terminal" })
+
+map({ "n", "v" }, "k", function()
+  return vim.v.count == 0 and "gk" or "k"
+end, { desc = "Moving up visual lines", noremap = true, expr = true })
+
+map({ "n", "v" }, "j", function()
+  return vim.v.count == 0 and "gj" or "j"
+end, { desc = "Moving down visual lines", noremap = true, expr = true })
