@@ -70,7 +70,7 @@ local nvchad = {
     lazy = true, -- we don't want to lazy load VimTeX
     ft = "tex",
   },
-  { "micangl/cmp-vimtex" },
+  { "micangl/cmp-vimtex", ft="tex" },
 }
 
 return nvchad
