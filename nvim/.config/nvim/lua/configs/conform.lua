@@ -1,6 +1,7 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
+    python = { "black" },
     css = { "prettier" },
     html = { "prettier" },
     javascript = { "prettier" },
@@ -13,6 +14,9 @@ local options = {
     prettier = {
       args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
+    black = {
+
+    }
   },
 
   default_format_opts = {

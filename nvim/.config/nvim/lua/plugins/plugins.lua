@@ -1,0 +1,106 @@
+local overrides = require "configs.overrides"
+
+local nvchad = {
+  -- override plugin configs
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason,
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require "configs.lspconfig"
+    end, -- Override to setup mason-lspconfig
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+  },
+
+  "mfussenegger/nvim-lint",
+  "rshkarin/mason-nvim-lint",
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "micangl/cmp-vimtex",
+    },
+    opts = function()
+      local config = require "nvchad.configs.cmp"
+      table.insert(config.sources, {
+        name = "vimtex",
+      })
+      return config
+    end,
+  },
+
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    enabled = function()
+      if jit then
+        return jit.os == "Linux"
+      else
+        return false
+      end
+    end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+
+  -- Latex
+  {
+    "lervag/vimtex",
+    lazy = true, -- we don't want to lazy load VimTeX
+    ft = "tex",
+    init = function()
+      if jit then
+        if jit.os == "Linux" then
+          vim.g.vimtex_view_method = "zathura"
+        end
+      end
+    end,
+  },
+  { "micangl/cmp-vimtex", ft = "tex" },
+
+  {
+    "barreiroleo/ltex_extra.nvim",
+    ft = { "markdown", "tex" },
+    dependencies = { "neovim/nvim-lspconfig" },
+  },
+}
+
+return nvchad
