@@ -1,8 +1,13 @@
 require("nvchad.mappings")
 
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 
-map("n", "<CR>", "o<ESC>", { desc = "Newline" })
+-- Remove tab (no tabufline)
+unmap("n", "<Tab>")
+
+-- Newline from normal mode
+map("n", "<CR>", "o<ESC>")
 
 -- Tmux Navigator
 if jit then
