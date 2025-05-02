@@ -52,14 +52,15 @@ masonlsp.setup_handlers({
 				})
 			end,
 			capabilities = nvlsp.capabilities,
+			filetypes = { "bib", "markdown", "tex", "plaintex" },
 			settings = {
 				ltex = {
 					language = { "en-CA" },
 					additionalRules = {
 						motherTongue = { "fr" },
 						enablePickyRules = true,
-						enabled = { "bibtex", "markdown", "tex", "latex" },
 					},
+					enabled = { "bibtex", "markdown", "tex", "latex" },
 				},
 			},
 		})
