@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Desktop ~/.dotfiles -mindepth 1 -type d -not -path '*/.git*' | fzf --border)
+    selected=$(find ~/Desktop ~/dotfiles -mindepth 1 -type d -not -path '*/.git*' | fzf --border)
 fi
 
 if [[ -z $selected ]]; then
