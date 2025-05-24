@@ -1,0 +1,127 @@
+@import "mocha.css";
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+}
+
+#expandpower,
+#custom-launcher,
+#custom-lock,
+#custom-shutdown,
+#workspaces,
+#expandsys,
+#cpu,
+#memory,
+#temperature,
+#window,
+#backlight,
+#pulseaudio,
+#language,
+#network,
+#bluetooth,
+#clock,
+#battery {
+  background-color: @surface0;
+  padding: 0px 10px;
+  margin: 0px 0px;
+}
+
+#expandpower {
+  padding: 0;
+  border-radius: 1rem 0 0 1rem;
+}
+
+#custom-os {
+  color: @mauve;
+}
+
+#custom-launcher {
+  color: @blue;
+}
+
+#custom-lock {
+  color: @green;
+}
+
+#custom-shutdown {
+  padding-right: 0;
+  color: @red;
+}
+
+#workspaces button {
+  color: @green;
+}
+
+#workspaces button.empty {
+  color: @pink;
+}
+
+#workspaces button.active {
+  color: @peach;
+}
+
+#workspaces button:hover {
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
+  text-shadow: none;
+}
+
+#expandsys {
+  border-radius: 0 1rem 1rem 0;
+}
+
+#window {
+  border-radius: 1rem;
+  padding: 0px 20px;
+}
+
+#backlight {
+  color: @yellow;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#pulseaudio {
+  color: @teal;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+#language {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @flamingo;
+  margin-left: 1rem;
+  padding-right: 0;
+}
+
+#bluetooth {
+  border-radius: 0px 1rem 1rem 0px;
+  color: @blue;
+}
+
+#clock {
+  color: @peach;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#battery {
+  color: @green;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
