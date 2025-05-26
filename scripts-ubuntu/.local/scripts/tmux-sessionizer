@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+    source=1 # Request name
+else
+  # Search in folders and active tmux session
+  # Prefix type of element
+  selected=$( (tmux ls -F '#{session_name}' | sed 's/^/tmux session: /'; find ~/Desktop ~/dotfiles -mindepth 1 -type d -not -path '*/.git*' | sed 's/^/folder: /') | fzf --border )
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+# Remove type of element prefix
+if [[ "$selected" =~ ^tmux\ session: ]]; then
+  source=0 # Do not request name, will use the tmux session name
+  selected=$(echo "$selected" | sed 's/^tmux session: //')
+else
+  source=1
+  selected=$(echo "$selected" | sed 's/^folder: //')
+fi
+
+if [[ source -eq 1 ]]; then
+  selected_name=$(echo "" | fzf --print-query --prompt="Session name: " --border --pointer '' --no-info)
+else
+  selected_name=$selected # Use the name of the tmux session
+fi
+
+if [[ -z $selected_name ]]; then
+  selected_name=$(basename "$selected" | tr . _)
+fi
+
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+if [[ -z $TMUX ]]; then
+    tmux attach -t $selected_name
+else
+    tmux switch-client -t $selected_name
+fi
