@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "gold.css";
 
 * {
     font-family: JetBrainsMono Nerd Font;
@@ -39,33 +39,33 @@
   border-radius: 1rem 0 0 1rem;
 }
 
-#custom-os {
-  color: @mauve;
-}
-
-#custom-launcher {
-  color: @blue;
-}
-
-#custom-lock {
-  color: @green;
-}
-
-#custom-shutdown {
-  padding-right: 0;
-  color: @red;
-}
+/* #custom-os { */
+/*   color: @mauve; */
+/* } */
+/**/
+/* #custom-launcher { */
+/*   color: @blue; */
+/* } */
+/**/
+/* #custom-lock { */
+/*   color: @green; */
+/* } */
+/**/
+/* #custom-shutdown { */
+/*   padding-right: 0; */
+/*   color: @red; */
+/* } */
 
 #workspaces button {
-  color: @green;
+  color: @gold;
 }
 
 #workspaces button.empty {
-  color: @pink;
+  color: @text;
 }
 
 #workspaces button.active {
-  color: @peach;
+  color: @red;
 }
 
 #workspaces button:hover {
@@ -90,41 +90,41 @@ window#waybar.empty #window {
 }
 
 #backlight {
-  color: @yellow;
+  /* color: @yellow; */
   border-radius: 1rem 0px 0px 1rem;
 }
 
 #pulseaudio {
-  color: @teal;
+  /* color: @teal; */
   border-radius: 0px 1rem 1rem 0px;
 }
 
 #language {
   border-radius: 1rem 0px 0px 1rem;
-  color: @flamingo;
+  /* color: @flamingo; */
   margin-left: 1rem;
   padding-right: 0;
 }
 
 #bluetooth {
   border-radius: 0px 1rem 1rem 0px;
-  color: @blue;
+  /* color: @blue; */
 }
 
 #clock {
-  color: @peach;
+  color: @gold;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
 
 #battery {
-  color: @green;
+  /* color: @green; */
   border-radius: 0px 1rem 1rem 0px;
 }
 
-#battery.charging {
-  color: @green;
-}
+/* #battery.charging { */
+/*   color: @green; */
+/* } */
 
 #battery.warning:not(.charging) {
   color: @red;

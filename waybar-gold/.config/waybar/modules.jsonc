@@ -1,0 +1,235 @@
+// ----------------------------------------------------- 
+//
+//  __  __           _       _            
+// |  \/  | ___   __| |_   _| | ___  ___  
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
+// | |  | | (_) | (_| | |_| | |  __/\__ \ 
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
+//                                        
+//  
+// by Frogprog (2025) (adapted) 
+// ----------------------------------------------------- 
+
+{
+  // =========================
+  // Left group
+  // =========================
+
+  // Expand group for power buttons and launcher
+  "group/expandpower": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/os", 
+      "custom/launcher",
+      "custom/lock",
+      "custom/shutdown"
+    ]
+  },
+
+  // Expand icon for power buttons and launcher
+  "custom/os": {
+    "format": "  ",
+    "tooltip": false
+  },
+
+  // App launcher
+  "custom/launcher": {
+    "format": "󰀻",
+    "on-click": "wofi --show drun",
+    "tooltip-format": "Launcher"
+  },
+
+  // Lock module
+  "custom/lock": {
+    "format": "󰌾",
+    "on-click": "hyprlock",
+    "tooltip-format": "Lock"
+  },
+
+  // Shutdown module
+  "custom/shutdown": {
+    "format": " ",
+    "on-click": "wlogout",
+    "tooltip-format": "Shutdown"
+  },
+
+  // Hyrland workspaces module
+  "hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active": "",
+			"default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "eDP-1": [1, 2, 3]
+    }
+  },
+
+  // Expand group for system info
+  "group/expandsys": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/infosys", 
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
+
+  // Expand icon for system info
+  "custom/infosys": {
+    "format": "󰋼 ",
+    "tooltip": false
+  },
+
+  // Hardware modules
+  "cpu": {
+    "format": "󰻠",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": ""
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": ""
+  },
+
+  // =========================
+  // Center group
+  // =========================
+
+  // Hyprland windows module
+  "hyprland/window": {
+    "format": "{title}",
+    "rewrite": {
+        "(.*)Mozilla Firefox": "Firefox",
+        "tmux(.*)": "Terminal",
+        "zsh": "Terminal",
+        "jdumas(.*)": "Terminal",
+        "(.*)Obsidian(.*)": "Obsidian",
+        "(.*)Zotero": "Zotero"
+    }
+  },
+
+  // =========================
+  // Right group
+  // =========================
+
+  // Modules right group
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": [
+      "backlight",
+      "pulseaudio", 
+      "hyprland/language", 
+      "network", 
+      "bluetooth", 
+      "clock",
+      "battery"
+    ]
+  },
+
+  // Brightness module
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["󰌶", "󰌵", "󰛨"]
+  },
+  
+  // Volume module
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}%  {icon}",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  // Language module
+  "hyprland/language": {
+    "format-en": "en",
+    "format-fr": "fr"
+  },
+
+  // Network module
+  "network": {
+    "format-wifi": "",
+    "format-ethernet":"",
+    "format-disconnected": "",
+    "tooltip-format-disconnected": "Error",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "on-click": "~/.config/waybar/scripts/wifimenu"
+  },
+
+  // Bluetooth module
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "BT-off",
+    "format-disabled": "󰂲",
+    "format-connected-battery": "{device_battery_percentage}% 󰂯",
+    "format-alt": "{device_alias} 󰂯",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+    "on-click": "~/.config/waybar/scripts/bluetoothmenu"
+  },
+
+  // Clock module
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M:%OS, %B %d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#f7f5ed'><b>{}</b></span>",
+        "days":       "<span color='#f7f5ed'><b>{}</b></span>",
+        "weekdays":   "<span color='#f5c460'><b>{}</b></span>",
+        "today":      "<span color='#bf4339'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  // Battery module
+  "battery": {
+    "interval":30,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰁻","󰁼","󰁾","󰂀","󰂂","󰁹"]
+  }
+}
