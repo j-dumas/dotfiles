@@ -39,16 +39,16 @@
   border-radius: 1rem 0 0 1rem;
 }
 
-#custom-os {
-  color: @mauve;
-}
+/* #custom-os { */
+/*   color: @mauve; */
+/* } */
 
 #custom-launcher {
-  color: @blue;
+  color: @sapphire;
 }
 
 #custom-lock {
-  color: @green;
+  color: @teal;
 }
 
 #custom-shutdown {
@@ -56,16 +56,20 @@
   color: @red;
 }
 
+/* #custom-infosys { */
+/*   color: @rosewater; */
+/* } */
+
 #workspaces button {
-  color: @green;
+  color: @lavender;
 }
 
 #workspaces button.empty {
-  color: @pink;
+  color: @text;
 }
 
 #workspaces button.active {
-  color: @peach;
+  color: @mauve;
 }
 
 #workspaces button:hover {
