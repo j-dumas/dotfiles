@@ -21,6 +21,8 @@
   // make the bar appear on the top
   "position": "top",
 
+  "output": "eDP-1",
+
   // make margin same as windows and center bar vertically
   "margin": "10 10 0 10",
 

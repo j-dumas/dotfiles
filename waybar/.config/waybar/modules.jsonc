@@ -45,16 +45,16 @@
   },
 
   // Lock module
-  "custom/lock": {
-    "format": "󰌾",
-    "on-click": "hyprlock",
-    "tooltip-format": "Lock"
-  },
+//  "custom/lock": {
+//    "format": "󰌾",
+//    "on-click": "hyprlock",
+//    "tooltip-format": "Lock"
+//  },
 
   // Shutdown module
   "custom/shutdown": {
     "format": " ",
-    "on-click": "wlogout",
+    "on-click": "wlogout -b 2 -c 10px -r 10px",
     "tooltip-format": "Shutdown"
   },
 

@@ -44,12 +44,12 @@
 /* } */
 
 #custom-launcher {
-  color: @sapphire;
-}
-
-#custom-lock {
   color: @teal;
 }
+
+/* #custom-lock { */
+/*   color: @teal; */
+/* } */
 
 #custom-shutdown {
   padding-right: 0;
