@@ -7,6 +7,17 @@ local nvchad = {
 		opts = overrides.mason,
 	},
 
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		cmd = "Telescope",
+		opts = function()
+			local config = require("nvchad.configs.telescope")
+			config.pickers = { find_files = { hidden = true } }
+			return config
+		end,
+	},
+
 	-- 0.11 introduced vim.lsp.config
 	-- {
 	--   "williamboman/mason-lspconfig.nvim",
@@ -59,6 +70,7 @@ local nvchad = {
 			require("better_escape").setup()
 		end,
 	},
+
 	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
@@ -95,6 +107,7 @@ local nvchad = {
 			end
 		end,
 	},
+
 	{ "micangl/cmp-vimtex", ft = "tex" },
 
 	{
