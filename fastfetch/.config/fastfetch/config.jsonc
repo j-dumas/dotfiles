@@ -14,7 +14,7 @@
         },
         {
             "type": "cpu",
-            "key": "│ ├󰍛CPU",
+            "key": "│ ├󰻠 CPU",
             "showPeCoreCount": true,
             "format": "{1}",
             "keyColor": "green"
@@ -25,8 +25,18 @@
             "keyColor": "green"
         },
         {
+            "type": "disk",
+            "key": "│ ├ Disk",
+            "keyColor": "green"
+        },
+        {
+            "type": "battery",
+            "key": "│ ├󰂀 Battery",
+            "keyColor": "green"
+        },
+        {
             "type": "memory",
-            "key": "└ └󰍛 Memory",
+            "key": "└ └ Memory",
             "keyColor": "green"
         },
         {
@@ -62,7 +72,7 @@
         },
         {
             "type": "uptime",
-            "key": "└ └ Uptime",
+            "key": "└ └ Uptime",
             "keyColor": "yellow"
         },
         "break",
@@ -72,6 +82,16 @@
             "keyColor": "blue"
         },
         "break",
+        {
+            "type": "wifi",
+            "key": "󰖩 Wifi",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "localip",
+            "key": "└ └󰩟 IP",
+            "keyColor": "magenta"
+        },
         {
             "type": "custom",
             "format": "└──────────────────────────────────────────────────────┘",
