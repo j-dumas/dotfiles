@@ -108,6 +108,10 @@ local nvchad = {
 					vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 				end
 			end
+
+			vim.g.vimtex_compiler_latexmk = {
+				aux_dir = 'build'
+			}
 		end,
 	},
 
