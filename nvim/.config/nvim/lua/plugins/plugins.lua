@@ -97,12 +97,15 @@ local nvchad = {
 	-- Latex
 	{
 		"lervag/vimtex",
-		lazy = true, -- we don't want to lazy load VimTeX
+		lazy = false, -- we don't want to lazy load VimTeX
 		ft = "tex",
 		init = function()
 			if jit then
 				if jit.os == "Linux" then
 					vim.g.vimtex_view_method = "zathura"
+				elseif jit.os == "Windows" then
+					vim.g.vimtex_view_general_viewer = 'SumatraPDF'
+					vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 				end
 			end
 		end,
