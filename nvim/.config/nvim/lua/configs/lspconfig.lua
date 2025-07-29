@@ -13,6 +13,7 @@ vim.lsp.config.pylsp = {
           ignore = { "E203" },
           maxLineLength = 88, -- Black formatter
         },
+        black = { enabled = true },
       },
     },
   },

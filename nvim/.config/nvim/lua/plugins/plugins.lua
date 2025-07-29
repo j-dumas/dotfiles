@@ -31,12 +31,19 @@ local nvchad = {
     },
   },
 
+  -- TODO : add event to load?
   "mfussenegger/nvim-lint",
   "rshkarin/mason-nvim-lint",
 
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
+    opts = { enable = true, max_lines = 2 },
   },
 
   {
@@ -116,6 +123,16 @@ local nvchad = {
     "barreiroleo/ltex_extra.nvim",
     ft = { "markdown", "tex" },
     dependencies = { "neovim/nvim-lspconfig" },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
 }
 
