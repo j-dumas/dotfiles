@@ -45,11 +45,11 @@
   },
 
   // Lock module
-//  "custom/lock": {
-//    "format": "󰌾",
-//    "on-click": "hyprlock",
-//    "tooltip-format": "Lock"
-//  },
+ "custom/lock": {
+   "format": "󰌾",
+   "on-click": "hyprlock",
+   "tooltip-format": "Lock"
+ },
 
   // Shutdown module
   "custom/shutdown": {
