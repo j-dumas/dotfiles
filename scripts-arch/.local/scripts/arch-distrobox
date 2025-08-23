@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Order of parameters :
+#   1. name
+#   2. path to project (to share folder)
+#   3. additional packages for the project
+
+NAME=$1
+PROJECT_PATH=$(realpath $2)
+PACKAGES=$3
+
+if [ -z $NAME ] || [ -z $PROJECT_PATH ]; then
+    echo "Usage: arch-distrobox <container name> <project path> \"<package list>\""
+    exit 1
+fi
+
+distrobox create $NAME -i archlinux --additional-packages "base-devel neovim $PACKAGES"
