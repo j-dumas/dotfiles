@@ -117,9 +117,8 @@
     "format": "{title}",
     "rewrite": {
         "(.*)Mozilla Firefox": "Firefox",
-        "tmux(.*)": "Terminal",
-        "zsh": "Terminal",
-        "jdumas(.*)": "Terminal",
+        "tmux(.*)": "tmux",
+        "nvim(.*)": "nvim",
         "(.*)Obsidian(.*)": "Obsidian",
         "(.*)Zotero": "Zotero"
     }
@@ -196,7 +195,7 @@
   // Clock module
   "clock": {
     "interval": 1,
-    "format": "{:%H:%M:%OS, %B %d}",
+    "format": "{:%H:%M:%OS %F}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode"          : "month",
