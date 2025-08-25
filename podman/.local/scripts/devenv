@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+BASE_IMG_NAME="devenv"
 NO_NEW_IMG=false
+
 # Order of parameters :
 #   1. flag to use base img for the container
 #   2. name
@@ -8,6 +10,7 @@ NO_NEW_IMG=false
 usage() {
     echo "Usage: devenv [-n for no new image] <container name> [project path]"
 }
+
 while getopts "n" opt; do 
     case ${opt} in 
         n) NO_NEW_IMG=true;;
@@ -21,4 +24,8 @@ PROJECT_PATH=$(realpath ${2:-$(pwd)})
 if [ -z $NAME ]; then
     usage
     exit 1
+fi
+
+if ! podman image exists $BASE_IMG_NAME; then
+    podman build -f ~/BaseEnvContainerfile -t devenv .
 fi
