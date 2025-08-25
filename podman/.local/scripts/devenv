@@ -29,3 +29,11 @@ fi
 if ! podman image exists $BASE_IMG_NAME; then
     podman build -f ~/BaseEnvContainerfile -t devenv .
 fi
+
+if [ $NO_NEW_IMG = true ]; then
+    IMG_NAME=$BASE_IMG_NAME
+else 
+    IMG_NAME=$NAME
+    podman build -f $PROJECT_PATH/EnvContainerfile -t $NAME $PROJECT_PATH
+fi
+
