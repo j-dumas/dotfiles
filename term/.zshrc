@@ -83,6 +83,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias python=python3
 alias py=python3
 alias lsa="ls -Alh --group-directories-first --color=auto"
+alias pm=podman
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
