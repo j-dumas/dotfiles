@@ -1,0 +1,15 @@
+FROM archlinux:latest 
+LABEL Description="Base development env" 
+
+RUN pacman -Syu --noconfirm \
+    base-devel \
+    zsh \
+    neovim \
+    wget 
+
+RUN pacman -Scc --noconfirm 
+RUN useradd -m -s /usr/bin/zsh jdumas
+
+ENV HOME /home/jdumas
+USER jdumas
+# WORKDIR /home/jdumas
