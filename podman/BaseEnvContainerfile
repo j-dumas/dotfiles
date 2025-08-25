@@ -12,4 +12,4 @@ RUN useradd -m -s /usr/bin/zsh jdumas
 
 ENV HOME /home/jdumas
 USER jdumas
-# WORKDIR /home/jdumas
+WORKDIR /home/jdumas
