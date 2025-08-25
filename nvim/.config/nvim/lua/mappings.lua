@@ -23,7 +23,7 @@ end
 map(
 	"n",
 	"<leader>fs",
-	"<cmd> Telescope find_files cwd=~<CR>",
+	"<cmd> Telescope find_files cwd=~ hidden=true follow=true no_ignore=true<CR>",
 	{ desc = "telescope find files starting from home" }
 )
 

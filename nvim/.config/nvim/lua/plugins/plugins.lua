@@ -1,16 +1,16 @@
 local overrides = require "configs.overrides"
 
 local nvchad = {
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    cmd = "Telescope",
-    opts = function()
-      local config = require "nvchad.configs.telescope"
-      config.pickers = { find_files = { hidden = true } }
-      return config
-    end,
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   cmd = "Telescope",
+  --   opts = function()
+  --     local config = require "nvchad.configs.telescope"
+  --     config.pickers = { find_files = { hidden = true } }
+  --     return config
+  --   end,
+  -- },
 
   -- 0.11 introduced vim.lsp.config making mason-lspconfig automatically enable lsp only
   {
