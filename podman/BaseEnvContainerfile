@@ -13,6 +13,8 @@ RUN useradd -m -s /usr/bin/zsh jdumas
 
 USER jdumas
 
+RUN mkdir /home/jdumas/.local && mkdir /home/jdumas/.config
+
 ENV HOME /home/jdumas
 ENV PROMPT="%F{#a6e3a1}%n%f@%F{#89b4fa}%m%f:%F{#fab387}%~%f $ "
 
