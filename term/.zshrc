@@ -33,13 +33,15 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions
-  ssh-agent
+  # ssh-agent
 )
 
-zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent lazy yes
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 source $ZSH/oh-my-zsh.sh
+# zstyle :omz:plugins:ssh-agent quiet yes
+# zstyle :omz:plugins:ssh-agent lazy yes
 
 # User configuration
 

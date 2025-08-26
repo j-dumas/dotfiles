@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Set the ssh-agent for Obsidian to have access to it
-
-# Export SSH_AUTH_SOCK from the current session (in tmp)
-export SSH_AUTH_SOCK=$(find /tmp -type s -name 'agent.*' 2>/dev/null | sort -r | head -n1)
-exec obsidian "$@"
