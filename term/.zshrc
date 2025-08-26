@@ -60,6 +60,15 @@ mkcdir ()
        cd -P -- "$1"
 }
 
+cdfzf ()
+{
+    local selected_dir=$(find ~ -mindepth 1 -type d -not -path '*/.git*' | fzf +m --height 50% --border)
+    if [[ -n "$selected_dir" ]]; then
+        # Change to the selected directory
+        cd "$selected_dir" || return 1
+    fi
+}
+
 bindkey -s ^f "tmux-sessionizer\n"
 
 # You may need to manually set your language environment
@@ -84,6 +93,7 @@ alias python=python3
 alias py=python3
 alias lsa="ls -Alh --group-directories-first --color=auto"
 alias pm=podman
+alias cdd=cdfzf
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
