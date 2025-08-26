@@ -11,6 +11,10 @@ RUN pacman -Syu --noconfirm \
 RUN pacman -Scc --noconfirm 
 RUN useradd -m -s /usr/bin/zsh jdumas
 
-ENV HOME /home/jdumas
 USER jdumas
-WORKDIR /home/jdumas
+
+ENV HOME /home/jdumas
+ENV PROMPT="%F{#a6e3a1}%n%f@%F{#89b4fa}%m%f:%F{#fab387}%~%f $ "
+
+WORKDIR /home/jdumas/src
+CMD ["/usr/bin/zsh"]
