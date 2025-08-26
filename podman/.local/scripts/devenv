@@ -38,7 +38,8 @@ else
 fi
 
 podman create -t --name $NAME \
+    --userns=keep-id \
     -v $HOME/.config/nvim:/home/jdumas/.config/nvim \
-    -v $HOME/.local/dev/nvim-container-share:/home/.local/share/nvim \
+    -v $HOME/.local/dev/nvim-container-share:/home/jdumas/.local/share/nvim \
     -v $PROJECT_PATH:/home/jdumas/src \
     -h $NAME $IMG_NAME
