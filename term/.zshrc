@@ -62,7 +62,7 @@ mkcdir ()
 
 cdfzf ()
 {
-    local selected_dir = $(find ~ -mindepth 1 -type d -not -path '*/.git*' | fzf +m --height 50% --border)
+    local selected_dir=$(find ~ -mindepth 1 -type d -not -path '*/.git*' 2> /dev/null | fzf +m --height 50% --border)
     if [[ -n "$selected_dir" ]]; then
         # Change to the selected directory
         cd "$selected_dir" || return 1
