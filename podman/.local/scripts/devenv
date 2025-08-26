@@ -11,6 +11,7 @@ usage() {
     echo "Usage: devenv [-n for no new image] <container name> [project path]"
 }
 
+# Parse argument -n
 while getopts "n" opt; do 
     case ${opt} in 
         n) NO_NEW_IMG=true;;
@@ -26,10 +27,12 @@ if [ -z $NAME ]; then
     exit 1
 fi
 
+# Create base image
 if ! podman image exists $BASE_IMG_NAME; then
     podman build -f ~/BaseEnvContainerfile -t devenv .
 fi
 
+# Create other image if needed
 if [ $NO_NEW_IMG = true ]; then
     IMG_NAME=$BASE_IMG_NAME
 else 
@@ -37,6 +40,7 @@ else
     podman build -f $PROJECT_PATH/EnvContainerfile -t $NAME $PROJECT_PATH
 fi
 
+# Create container with correct image, volumes and namespace
 podman create -t --name $NAME \
     --userns=keep-id \
     -v $HOME/.config/nvim:/home/jdumas/.config/nvim \

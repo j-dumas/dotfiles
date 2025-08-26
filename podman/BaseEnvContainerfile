@@ -1,6 +1,7 @@
 FROM archlinux:latest 
 LABEL Description="Base development env" 
 
+# Installed needed development packages
 RUN pacman -Syu --noconfirm \
     base-devel \
     zsh \
@@ -9,10 +10,12 @@ RUN pacman -Syu --noconfirm \
     wget 
 
 RUN pacman -Scc --noconfirm 
-RUN useradd -m -s /usr/bin/zsh jdumas
 
+# Create non root user
+RUN useradd -m -s /usr/bin/zsh jdumas
 USER jdumas
 
+# Initialize folders so they are not root owned on mount
 RUN mkdir /home/jdumas/.local && mkdir /home/jdumas/.config
 
 ENV HOME /home/jdumas
