@@ -5,6 +5,7 @@ RUN pacman -Syu --noconfirm \
     base-devel \
     zsh \
     neovim \
+    git \
     wget 
 
 RUN pacman -Scc --noconfirm 
