@@ -62,11 +62,21 @@ mkcdir ()
 
 cdfzf ()
 {
-    local selected_dir=$(find ~ -mindepth 1 -type d -not -path '*/.git*' | fzf +m --height 50% --border)
+    local selected_dir = $(find ~ -mindepth 1 -type d -not -path '*/.git*' | fzf +m --height 50% --border)
     if [[ -n "$selected_dir" ]]; then
         # Change to the selected directory
         cd "$selected_dir" || return 1
     fi
+}
+
+pms ()
+{
+    podman start -ia "$1"
+}
+
+pmc ()
+{
+    podman exec -it "$1" zsh
 }
 
 bindkey -s ^f "tmux-sessionizer\n"
