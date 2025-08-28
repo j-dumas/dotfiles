@@ -152,13 +152,13 @@
   // Volume module
   "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}%  {icon}",
-    "format-muted": "󰝟",
+    "format-muted": "{volume}% 󰝟",
     "format-icons": {
       "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol"
+    "on-click": "amixer set Master toggle -q",
+    "on-click-right": "pavucontrol"
   },
 
   // Language module
@@ -184,7 +184,7 @@
     "format-off": "󰂲",
     "format-disabled": "󰂲",
     "format-connected-battery": "{device_battery_percentage}% 󰂯",
-    "format-alt": "{device_alias} 󰂯",
+    // "format-connected": "{device_alias} 󰂯",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
