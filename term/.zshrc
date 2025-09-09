@@ -8,8 +8,8 @@ plugins=(
 )
 
 # gpg-agent-ssh settings for the terminal to know the socket and use tty
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# export GPG_TTY=$(tty)
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # zstyle :omz:plugins:ssh-agent quiet yes
 # zstyle :omz:plugins:ssh-agent lazy yes
