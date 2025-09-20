@@ -1,10 +1,7 @@
 require("nvchad.mappings")
 
 local map = vim.keymap.set
-local unmap = vim.keymap.del
-
--- Remove tab (no tabufline)
-unmap("n", "<Tab>")
+-- local unmap = vim.keymap.del
 
 -- Newline from normal mode
 map("n", "<CR>", "o<ESC>")
@@ -40,3 +37,9 @@ end, { desc = "Moving up visual lines", noremap = true, expr = true })
 map({ "n", "v" }, "j", function()
 	return vim.v.count == 0 and "gj" or "j"
 end, { desc = "Moving down visual lines", noremap = true, expr = true })
+
+-- Added back code actions
+map("n", "<leader>ca", function ()
+  vim.lsp.buf.code_action()
+end, {desc = "LSP Code actions"})
+
