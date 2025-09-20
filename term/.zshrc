@@ -21,12 +21,12 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 
 # PATH
-path+=('/usr/local/texlive/2024/bin/x86_64-linux')
+path+=("$HOME/texlive/2025/bin/x86_64-linux")
 path+=("$HOME/.local/scripts")
 export PATH 
 
-export MANPATH="$MANTPATH:/usr/local/texlive/2024/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"
+export MANPATH="$MANTPATH:$HOME/texlive/2025/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:$HOME/texlive/2025/texmf-dist/doc/info"
 
 # Functions
 mkcdir ()
