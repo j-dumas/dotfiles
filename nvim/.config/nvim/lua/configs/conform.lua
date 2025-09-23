@@ -7,7 +7,7 @@ local options = {
     javascript = { "prettier" },
     typescript = { "prettier" },
     c = { "clang_format" },
-    tex = { "Latexindent" },
+    tex = { "latexindent" },
   },
 
   formatters = {
