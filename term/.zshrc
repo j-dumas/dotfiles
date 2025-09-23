@@ -63,5 +63,6 @@ alias py=python3
 alias lsa="ls -Alh --group-directories-first --color=auto"
 alias pm=podman
 alias cdd=cdfzf
+alias img="kitten icat"
 
 eval "$(starship init zsh)"
