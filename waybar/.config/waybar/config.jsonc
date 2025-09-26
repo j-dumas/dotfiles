@@ -27,11 +27,7 @@
   "margin": "10 10 0 10",
 
   // moduler on the left
-  "modules-left": [
-    "group/expandpower",
-    "hyprland/workspaces", 
-    "group/expandsys"
-  ],
+  "modules-left": ["group/left"],
 
   // modules on the center
   "modules-center": ["hyprland/window"],

@@ -15,6 +15,18 @@
   // Left group
   // =========================
 
+  "group/left": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/expandpower",
+      "hyprland/workspaces", 
+      "hyprland/submap",
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
+
   // Expand group for power buttons and launcher
   "group/expandpower": {
     "orientation": "horizontal",
@@ -63,36 +75,40 @@
     "all-outputs": true,
 		"format": "{icon}",
 		"format-icons": {
-			"active": "",
-			"default": "",
-      "empty": ""
+			"active": "󱓻" // 
+			// "default": "",
+			//    "empty": ""
     },
     "persistent-workspaces": {
-      "eDP-1": [1, 2, 3]
+      "eDP-1": [1, 2, 3, 4]
     }
   },
 
-  // Expand group for system info
-  "group/expandsys": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 600,
-      "transition-to-right": true,
-      "click-to-reveal": true
-    },
-    "modules": [
-      "custom/infosys", 
-      "cpu",
-      "memory",
-      "temperature"
-    ]
+  "hyprland/submap": {
+      "tooltip": false
   },
 
+  // Expand group for system info
+  // "group/expandsys": {
+  //   "orientation": "horizontal",
+  //   "drawer": {
+  //     "transition-duration": 600,
+  //     "transition-to-right": true,
+  //     "click-to-reveal": true
+  //   },
+  //   "modules": [
+  //     "custom/infosys", 
+  //     "cpu",
+  //     "memory",
+  //     "temperature"
+  //   ]
+  // },
+
   // Expand icon for system info
-  "custom/infosys": {
-    "format": "󰋼 ",
-    "tooltip": false
-  },
+  // "custom/infosys": {
+  //   "format": "󰋼 ",
+  //   "tooltip": false
+  // },
 
   // Hardware modules
   "cpu": {

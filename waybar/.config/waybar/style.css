@@ -17,7 +17,8 @@
 #custom-lock,
 #custom-shutdown,
 #workspaces,
-#expandsys,
+/* #expandsys, */
+#submap,
 #cpu,
 #memory,
 #temperature,
@@ -60,12 +61,16 @@
 /*   color: @rosewater; */
 /* } */
 
+#workspaces {
+  padding-right: 0;
+}
+
 #workspaces button {
   color: @lavender;
 }
 
 #workspaces button.empty {
-  color: @text;
+  color: @overlay1;
 }
 
 #workspaces button.active {
@@ -80,8 +85,13 @@
   text-shadow: none;
 }
 
-#expandsys {
+/* #expandsys { */
+/*   border-radius: 0 1rem 1rem 0; */
+/* } */
+
+#temperature {
   border-radius: 0 1rem 1rem 0;
+  padding-right: 15px;
 }
 
 #window {
