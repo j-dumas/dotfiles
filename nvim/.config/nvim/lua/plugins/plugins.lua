@@ -61,6 +61,7 @@ local nvchad = {
       table.insert(config.sources, {
         name = "vimtex",
       })
+      config.completion.keyword_length = 2
       return config
     end,
   },
