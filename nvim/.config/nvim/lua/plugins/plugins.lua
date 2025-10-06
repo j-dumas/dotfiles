@@ -114,6 +114,7 @@ local nvchad = {
 
       vim.g.vimtex_compiler_latexmk = {
         aux_dir = "build",
+        out_dir = "pdfs"
       }
     end,
   },
