@@ -6,7 +6,7 @@ if [[ $# -eq 1 ]]; then
 else
   # Search in folders and active tmux session
   # Prefix type of element
-  selected=$( (tmux ls -F '#{session_name}' | sed 's/^/tmux session: /'; find ~/Desktop ~/dotfiles -mindepth 1 -type d -not -path '*/.git*' | sed 's/^/folder: /') | fzf --border )
+  selected=$( (tmux ls -F '#{session_name}' | sed 's/^/tmux session: /'; find ~/Documents ~/dotfiles -mindepth 1 -type d -not -path '*/.git*' | sed 's/^/folder: /') | fzf --border )
 fi
 
 if [[ -z $selected ]]; then
