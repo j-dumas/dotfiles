@@ -64,5 +64,7 @@ alias lsa="ls -Alh --group-directories-first --color=auto"
 alias pm=podman
 alias cdd=cdfzf
 alias img="kitten icat"
+alias penstart="sudo virsh start ParrotHTB"
+alias penstop="sudo virsh shutdown ParrotHTB"
 
 eval "$(starship init zsh)"
