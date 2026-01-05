@@ -66,5 +66,6 @@ alias cdd=cdfzf
 alias img="kitten icat"
 alias penstart="sudo virsh start ParrotHTB"
 alias penstop="sudo virsh shutdown ParrotHTB"
+alias monitors="hyprdynamicmonitors tui --disable-power-events"
 
 eval "$(starship init zsh)"
