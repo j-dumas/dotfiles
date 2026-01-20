@@ -67,6 +67,7 @@ alias img="kitten icat"
 alias penstart="sudo virsh start ParrotHTB"
 alias penstop="sudo virsh shutdown ParrotHTB"
 alias monitors="hyprdynamicmonitors tui --disable-power-events"
+alias x2go="QT_QPA_PLATFORM=xcb x2goclient"
 
 eval "$(starship init zsh)"
 
