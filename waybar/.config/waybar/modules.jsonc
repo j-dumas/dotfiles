@@ -137,7 +137,8 @@
         "tmux(.*)": "tmux",
         "nvim(.*)": "nvim",
         "(.*)Obsidian(.*)": "Obsidian",
-        "(.*)Zotero": "Zotero"
+        "(.*)Zotero": "Zotero",
+        "(.*)Teams": "Microsoft Teams"
     }
   },
 
