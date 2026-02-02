@@ -29,7 +29,8 @@
 #network,
 #bluetooth,
 #clock,
-#battery {
+#battery,
+#custom-notification {
   background-color: @surface0;
   padding: 0px 10px;
   margin: 0px 0px;
@@ -151,4 +152,10 @@ window#waybar.empty #window {
 
 #battery.critical:not(.charging) {
   color: @red;
+}
+
+#custom-notification {
+  border-radius: 1rem;
+  margin-left: 1rem;
+  padding-right: 12px;
 }

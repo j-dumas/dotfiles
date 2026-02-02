@@ -1,0 +1,236 @@
+@import "mocha.css";
+
+* {
+  all: unset;
+  font-size: 14px;
+  font-family: JetBrainsMono Nerd Font;
+  transition: 200ms;
+}
+
+.image {
+  padding-right: 0.5rem;
+}
+
+/* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ */
+/* ┃                        Sliders                           ┃ */
+/* ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
+
+/* trough highlight { */
+/*   background: @text; */
+/* } */
+/**/
+/* scale { */
+/*   margin: 0 7px; */
+/* } */
+/**/
+/* scale trough { */
+/*   margin: 0rem 1rem; */
+/*   min-height: 8px; */
+/*   min-width: 70px; */
+/*   border-radius: 12.6px; */
+/* } */
+/**/
+/* trough slider { */
+/*   margin: -10px; */
+/*   border-radius: 12.6px; */
+/*   transition: all 0.2s ease; */
+/*   background-color: @mauve; */
+/* } */
+/**/
+/* trough { */
+/*   background-color: @surface0; */
+/* } */
+/**/
+/* scrollbar slider { */
+/*   margin: -3px; */
+/*   opacity: 0.8; */
+/* } */
+/**/
+/* scrollbar trough { */
+/*   margin: 2px 0; */
+/* } */
+
+/* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ */
+/* ┃                     Notifications                        ┃ */
+/* ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
+
+.notification-background {
+  border-radius: 12.6px;
+  margin: 18px;
+  background: alpha(@mantle, 0.85);
+  color: @text;
+  padding: 0;
+  border: 1px solid @surface1;
+}
+
+.notification-background .notification {
+  padding: 7px;
+  border-radius: 12.6px;
+}
+
+.notification .notification-content {
+  margin: 7px;
+}
+
+.notification .notification-content overlay {
+  /* icons */
+  margin: 4px;
+}
+
+.notification-content .summary {
+  color: @text;
+}
+
+.notification-content .time {
+  color: @subtext0;
+}
+
+.notification-content .body {
+  color: @subtext1;
+}
+
+.notification.critical {
+  background-color: alpha(@maroon, 0.85);
+  border: 1px solid @red;
+}
+
+.notification.critical .title,
+.notification.critical .body,
+.notification.critical .summary {
+  color: @base;
+}
+
+.notification > *:last-child > * {
+  min-height: 3.4em;
+}
+
+.notification-background .close-button {
+  margin: 7px;
+  margin-right: 1rem;
+  padding: 2px;
+  border-radius: 6.3px;
+  color: @base;
+  background-color: @red;
+}
+
+.notification-background .close-button:hover {
+  background-color: @maroon;
+}
+
+.notification-background .close-button:active {
+  background-color: @pink;
+}
+
+.notification .notification-action {
+  border-radius: 7px;
+  color: @text;
+  margin: 4px;
+  padding: 8px;
+  font-size: 0.2rem; /* controls the button size not text size*/
+}
+
+.notification .notification-action {
+  background-color: @surface0;
+}
+
+.notification .notification-action:hover {
+  background-color: @surface1;
+}
+
+.notification .notification-action:active {
+  background-color: @surface2;
+}
+
+.notification.critical progress {
+  background-color: @red;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @blue;
+}
+
+.notification progress,
+.notification trough,
+.notification progressbar {
+  border-radius: 12.6px;
+  padding: 3px 0;
+}
+
+/* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ */
+/* ┃                     Control Center                       ┃ */
+/* ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
+
+.control-center {
+  border-radius: 12.6px;
+  background-color: alpha(@base, 0.85);
+  color: @text;
+  padding: 14px;
+}
+
+.control-center .notification-background {
+  border-radius: 7px;
+  margin: 4px 10px;
+}
+
+.control-center .notification-background .notification {
+  border-radius: 7px;
+}
+
+.control-center .notification-background .notification.low {
+  opacity: 0.8;
+}
+
+.control-center .widget-title > label {
+  color: @text;
+  font-size: 1.3em;
+}
+
+.control-center .widget-title button {
+  margin: 7px;
+  padding: 5px;
+  border-radius: 6.3px;
+  color: @base;
+  background-color: @red;
+}
+
+.control-center .widget-title button:hover {
+  background-color: @maroon;
+}
+
+.control-center .widget-title button:active {
+  background-color: @maroon;
+}
+
+.control-center .notification-group {
+  margin-top: 10px;
+}
+
+.control-center .notification-group:focus .notification-background {
+  background-color: @surface0;
+}
+
+/* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ */
+/* ┃                     Do Not Disturb                       ┃ */
+/* ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
+
+.widget-dnd {
+  margin-top: 5px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 8px;
+  background: @surface0;
+}
+
+.widget-dnd > switch:checked {
+  background: @mauve;
+}
+
+.widget-dnd > switch slider {
+  background: @surface1;
+  border-radius: 8px;
+}
