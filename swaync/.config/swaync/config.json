@@ -4,6 +4,7 @@
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
+  "notification-window-preferred-output": "eDP-1",
   "control-center-layer": "top",
   "layer-shell": true,
   "layer-shell-cover-screen": true,

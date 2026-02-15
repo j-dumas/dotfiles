@@ -88,28 +88,6 @@
       "tooltip": false
   },
 
-  // Expand group for system info
-  // "group/expandsys": {
-  //   "orientation": "horizontal",
-  //   "drawer": {
-  //     "transition-duration": 600,
-  //     "transition-to-right": true,
-  //     "click-to-reveal": true
-  //   },
-  //   "modules": [
-  //     "custom/infosys", 
-  //     "cpu",
-  //     "memory",
-  //     "temperature"
-  //   ]
-  // },
-
-  // Expand icon for system info
-  // "custom/infosys": {
-  //   "format": "󰋼 ",
-  //   "tooltip": false
-  // },
-
   // Hardware modules
   "cpu": {
     "format": "󰻠",
@@ -138,7 +116,8 @@
         "nvim(.*)": "nvim",
         "(.*)Obsidian(.*)": "Obsidian",
         "(.*)Zotero": "Zotero",
-        "(.*)Teams": "Microsoft Teams"
+        "(.*)Teams": "Microsoft Teams",
+        "Discord(.*)": "Discord"
     }
   },
 
