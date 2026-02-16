@@ -8,13 +8,16 @@ NO_NEW_IMG=false
 #   2. name
 #   3. path to project (to share folder)
 usage() {
-    echo "Usage: devenv [-n for no new image] <container name> [project path]"
+    echo "Usage: devenv [-n for no new image] [-p <host port:port>] <container name> [project path]"
 }
 
-# Parse argument -n
-while getopts "n" opt; do 
+PORTS=""
+
+# Parse arguments
+while getopts "np:" opt; do 
     case ${opt} in 
         n) NO_NEW_IMG=true;;
+        p) PORTS="127.0.0.1:$OPTARG";; # Stay on localhost
     esac
 done
 shift $(($OPTIND - 1))
@@ -41,9 +44,16 @@ else
 fi
 
 # Create container with correct image, volumes and namespace
-podman create -t --name $NAME \
+CMD="podman create -t --name $NAME \
     --userns=keep-id \
     -v $HOME/.config/nvim:/home/jdumas/.config/nvim \
     -v $HOME/.local/dev/nvim-container-share:/home/jdumas/.local/share/nvim \
     -v $PROJECT_PATH:/home/jdumas/src \
-    -h $NAME $IMG_NAME
+    -h $NAME"
+
+if [[ -n "$PORTS" ]]; then
+  CMD="$CMD -p $PORTS"
+fi
+
+CMD="$CMD $IMG_NAME"
+eval $CMD
