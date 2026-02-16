@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+export SYSTEMD_EDITOR=nvim
 
 plugins=(
   git
@@ -44,6 +45,31 @@ cdfzf ()
     fi
 }
 
+reload ()
+{
+    omz update
+    source ~/.zshrc
+    tmux list-panes -a -F '#{pane_id} #{pane_current_command}' |
+    while read pane cmd; do
+      if [[ "$cmd" == "zsh" ]]; then
+        tmux send-keys -t "$pane" 'exec zsh' C-m
+        tmux send-keys -t "$pane" 'clear' C-m
+      fi
+    done
+}
+
+force-reload ()
+{
+    tmux list-panes -a -F '#{pane_id} #{pane_current_command}' |
+    while read pane cmd; do
+      if [[ "$cmd" == "nvim" ]]; then
+        echo "Closing nvim in $pane"
+        tmux send-keys -t "$pane" Escape ':wqa' C-m
+      fi
+    done
+    reload
+}
+
 pms ()
 {
     podman start -ia "$1"
@@ -80,3 +106,6 @@ eval "$(starship init zsh)"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/jdumas/.opam/opam-init/init.zsh' ]] || source '/home/jdumas/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# Created by `pipx` on 2026-02-12 16:27:58
+export PATH="$PATH:/home/jdumas/.local/bin"
