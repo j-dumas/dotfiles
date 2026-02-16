@@ -1,0 +1,59 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+let mapleader=" "
+
+" Modes for handler :
+"   n - normal mode
+"   i - insert mode
+"   x - visual mode
+"   v - visual and select modes
+"   a - all modes
+
+sethandler <C-v> i:ide n-v:vim
+sethandler <C-s> a:ide
+sethandler <C-c> a:ide
+sethandler <C-f> a:ide
+sethandler <C-r> a:vim
+set clipboard=unnamedplus
+
+" Codes actions
+nmap    <leader>fm  <Action>(ReformatCode)
+nmap    <leader>ra  <Action>(RenameElement)
+nmap    gr          <Action>(FindUsages)
+nmap    gD          <Action>(GotoDeclaration)
+nmap    gb          <Action>(Back)
+nmap    gi          <Action>(GotoImplementation)
+nmap    <leader>f   <Action>(ShowErrorDescription)
+nmap    K           <Action>(QuickJavaDoc)
+
+" Grep
+nmap    <leader>fw  <Action>(FindInPath)
+
+" Comments
+map     <leader>/   <Action>(CommentByLineComment)
+map     <leader>\  <Action>(CommentByBlockComment)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
