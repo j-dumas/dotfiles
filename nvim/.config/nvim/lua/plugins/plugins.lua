@@ -74,18 +74,18 @@ local nvchad = {
     end,
   },
 
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-    enabled = function()
-      if jit then
-        return jit.os == "Linux"
-      else
-        return false
-      end
-    end,
-  },
-
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   lazy = false,
+  --   enabled = function()
+  --     if jit then
+  --       return jit.os == "Linux"
+  --     else
+  --       return false
+  --     end
+  --   end,
+  -- },
+  --
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
