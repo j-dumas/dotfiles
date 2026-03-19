@@ -17,8 +17,8 @@ truncation_length = 4
 style = "bold lavender"
 
 [character]
-success_symbol = "[[  ](green) ❯](peach)"
-error_symbol = "[[  ](red) ❯](peach)"
+success_symbol = "[[  ](green) ❯](peach)"
+error_symbol = "[[  ](red) ❯](peach)"
 
 [git_branch]
 format = "[$branch]($style)"
