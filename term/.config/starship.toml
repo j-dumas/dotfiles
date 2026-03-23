@@ -1,6 +1,5 @@
 format = """
 $username\
-$hostname\
 $directory\
 $git_branch\
 $git_state\
@@ -12,13 +11,19 @@ $character"""
 
 palette = "catppuccin_mocha"
 
+[username]
+style_user = 'bold green'
+style_root = 'bold red'
+format = "[$user]($style):"
+show_always = true
+
 [directory]
 truncation_length = 4
 style = "bold lavender"
 
 [character]
-success_symbol = "[[  ](green) ❯](peach)"
-error_symbol = "[[  ](red) ❯](peach)"
+success_symbol = "[❯](bold peach)"
+error_symbol = "[❯](bold red)"
 
 [git_branch]
 format = "[$branch]($style)"
@@ -44,8 +49,9 @@ format = "[$duration]($style) "
 style = "yellow"
 
 [python]
-format = "[$virtualenv]($style) "
+format = "[($version )(\\($virtualenv\\) )]($style)"
 style = "flamingo"
+# pyenv_version_name = true
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
