@@ -30,13 +30,14 @@ vim.lsp.config.lua_ls = {
 }
 
 -- Still use lspconfig to setup properly ltex_extra
-vim.lsp.config.ltex = {
+vim.lsp.config.ltex_plus = {
 	on_init = nvlsp.on_init,
 	on_attach = function(client, bufnr)
 		nvlsp.on_attach(client, bufnr)
+
 		require("ltex_extra").setup({
 			load_langs = { "fr", "en-CA" },
-			path = vim.fn.expand("~") .. "/.local/share/ltex",
+			path = vim.fn.stdpath("data") .. "/ltex",
 		})
 	end,
 	capabilities = nvlsp.capabilities,
