@@ -51,7 +51,9 @@ style = "yellow"
 [python]
 format = "[($version )(\\($virtualenv\\) )]($style)"
 style = "flamingo"
-# pyenv_version_name = true
+detect_extensions = []
+detect_files = []
+detect_folders = []
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
