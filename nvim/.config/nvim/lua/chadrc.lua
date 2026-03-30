@@ -9,7 +9,7 @@ M.base46 = {
 
   hl_override = highlights.override,
   hl_add = highlights.add,
-  transparency = false,
+  transparency = true,
 }
 
 M.nvdash = {
