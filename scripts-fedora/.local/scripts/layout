@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+#  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+#  ┃                  Home                      ┃
+#  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+if [[ $1 = "hl" ]]; then
+  # Latex writing setup
+  hyprctl dispatch moveworkspacetomonitor 1 HDMI-A-1
+
+  hyprctl dispatch moveworkspacetomonitor 2 eDP-1
+  hyprctl dispatch moveworkspacetomonitor 3 eDP-1
+  hyprctl dispatch workspace 3
+
+  hyprctl dispatch moveworkspacetomonitor 4 DP-1
+  hyprctl dispatch workspace 4
+
+  hyprctl dispatch workspace 1
+
+elif [[ $1 = "hp" ]]; then
+  # Pentesting setup
+  hyprctl dispatch moveworkspacetomonitor 2 DP-1
+
+  hyprctl dispatch moveworkspacetomonitor 1 HDMI-A-1
+  hyprctl dispatch workspace 1
+
+  hyprctl dispatch moveworkspacetomonitor 3 eDP-1
+  hyprctl dispatch workspace 3
+
+  hyprctl dispatch workspace 2
+
+#  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+#  ┃                   Uni                      ┃
+#  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+elif [[ $1 = "up" ]]; then
+  # Pentesting setup
+  hyprctl dispatch moveworkspacetomonitor 1 DP-1
+  hyprctl dispatch moveworkspacetomonitor 2 DP-1
+
+  hyprctl dispatch moveworkspacetomonitor 3 eDP-1
+  hyprctl dispatch workspace 3
+
+  hyprctl dispatch workspace 2
+
+elif [[ $1 = "ul" ]]; then
+  # Latex writing setup
+  hyprctl dispatch moveworkspacetomonitor 1 DP-1
+
+  hyprctl dispatch moveworkspacetomonitor 2 eDP-1
+  hyprctl dispatch moveworkspacetomonitor 3 eDP-1
+  hyprctl dispatch moveworkspacetomonitor 4 eDP-1
+  hyprctl dispatch workspace 3
+
+  hyprctl dispatch workspace 1
+fi
