@@ -80,7 +80,7 @@ pmc ()
     podman exec -it "$1" zsh
 }
 
-bindkey -s ^f "tmux-sessionizer\n"
+# bindkey -s ^f "tmux-sessionizer\n"
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
