@@ -109,6 +109,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "tertiary",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
@@ -389,7 +390,7 @@
             ]
         },
         "language": "",
-        "lockOnSuspend": true,
+        "lockOnSuspend": false,
         "lockScreenAnimations": false,
         "lockScreenBlur": 0.4,
         "lockScreenCountdownDuration": 10000,
@@ -426,7 +427,7 @@
     },
     "idle": {
         "customCommands": "[]",
-        "enabled": true,
+        "enabled": false,
         "fadeDuration": 20,
         "lockCommand": "",
         "lockTimeout": 300,
@@ -536,7 +537,7 @@
         "powerOptions": [
             {
                 "action": "lock",
-                "command": "",
+                "command": "hyprlock",
                 "countdownEnabled": false,
                 "enabled": true,
                 "keybind": "1"
