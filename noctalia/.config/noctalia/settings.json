@@ -21,7 +21,9 @@
             "org.mozilla.firefox",
             "md.obsidian.Obsidian",
             "org.zotero.Zotero",
-            "org.kde.dolphin"
+            "org.kde.dolphin",
+            "org.pwmt.zathura",
+            "com.todoist.Todoist"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
