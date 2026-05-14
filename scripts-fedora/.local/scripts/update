@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo dnf update
+sudo dnf autoremove
+flatpak update
