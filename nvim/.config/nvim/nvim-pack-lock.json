@@ -29,6 +29,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "ae305699da5e97b6cffdd5cc6f6045b1b0bd26ea",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     }
   }
 }
