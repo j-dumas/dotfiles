@@ -98,14 +98,5 @@ alias x2go="QT_QPA_PLATFORM=xcb x2goclient"
 
 eval "$(starship init zsh)"
 
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/home/jdumas/.opam/opam-init/init.zsh' ]] || source '/home/jdumas/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
-
 # Created by `pipx` on 2026-02-12 16:27:58
 export PATH="$PATH:/home/jdumas/.local/bin"
