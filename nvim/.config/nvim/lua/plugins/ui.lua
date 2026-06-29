@@ -10,6 +10,13 @@ vim.pack.add {
 require("catppuccin").setup({
     flavour = "mocha",
     transparent_background = true,
+    custom_highlights = function(colors)
+        local U = require("catppuccin.utils.colors")
+        return {
+            MatchParen = { fg = colors.none, style = {} },
+            IncSearch = { bg = colors.green },
+        }
+    end,
     integrations = {
         lualine = {
             mocha = function(colors)
