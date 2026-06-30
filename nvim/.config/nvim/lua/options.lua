@@ -1,7 +1,7 @@
-require('vim._core.ui2').enable()
+require("vim._core.ui2").enable()
 
 vim.g.netrw_banner = 0
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 vim.o.nu = true
 vim.o.relativenumber = true
@@ -35,4 +35,4 @@ vim.o.cursorlineopt = "number"
 vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 vim.o.termguicolors = true
-vim.opt.whichwrap:append "<>[]hl"
+vim.opt.whichwrap:append("<>[]hl")

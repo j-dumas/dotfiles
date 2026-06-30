@@ -1,11 +1,11 @@
-vim.pack.add { 
-    { 
+vim.pack.add({
+    {
         src = "https://github.com/catppuccin/nvim",
-        name = "catppuccin" 
-    } ,
-    'https://github.com/nvim-tree/nvim-web-devicons',
-    'https://github.com/nvim-lualine/lualine.nvim'
-}
+        name = "catppuccin",
+    },
+    "https://github.com/nvim-tree/nvim-web-devicons",
+    "https://github.com/nvim-lualine/lualine.nvim",
+})
 
 require("catppuccin").setup({
     flavour = "mocha",
@@ -36,24 +36,24 @@ require("catppuccin").setup({
                         b = { fg = colors.text },
                     },
                 }
-            end
-        }
-    }
+            end,
+        },
+    },
 })
-vim.cmd.colorscheme "catppuccin-nvim"
+vim.cmd.colorscheme("catppuccin-nvim")
 
-require('lualine').setup({
+require("lualine").setup({
     options = {
-        component_separators = {left = '', right = ''},
-        section_separators = {left = '◤', right = ''}
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "◤", right = "" },
     },
     sections = {
-        lualine_a = {'mode'},
-        lualine_b = {{'filename', path = 1}},
-        lualine_c = {'branch', 'diff'},
-        lualine_x = {'diagnostics', 'lsp_status'},
-        lualine_y = {'location'},
-        lualine_z = {'progress'}
+        lualine_a = { "mode" },
+        lualine_b = { { "filename", path = 1 } },
+        lualine_c = { "branch", "diff" },
+        lualine_x = { "diagnostics", "lsp_status" },
+        lualine_y = { "location" },
+        lualine_z = { "progress" },
     },
-    extensions = {'nvim-tree'}
+    extensions = { "nvim-tree" },
 })
