@@ -11,10 +11,11 @@ require("catppuccin").setup({
     flavour = "mocha",
     transparent_background = true,
     custom_highlights = function(colors)
-        local U = require("catppuccin.utils.colors")
         return {
-            MatchParen = { fg = colors.none, style = {} },
+            MatchParen = { fg = colors.none },
             IncSearch = { bg = colors.green },
+            NormalFloat = { bg = colors.none },
+            FloatBorder = { bg = colors.none },
         }
     end,
     integrations = {
