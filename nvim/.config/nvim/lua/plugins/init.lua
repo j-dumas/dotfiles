@@ -1,6 +1,7 @@
 require("plugins.conform")
 require("plugins.fzf")
 require("plugins.lsp")
+require("plugins.qol")
 require("plugins.tree")
 require("plugins.treesitter")
 require("plugins.ui")
