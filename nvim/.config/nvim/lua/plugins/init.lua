@@ -1,4 +1,5 @@
 require("plugins.conform")
+require("plugins.lsp")
 require("plugins.tree")
 require("plugins.treesitter")
 require("plugins.ui")
