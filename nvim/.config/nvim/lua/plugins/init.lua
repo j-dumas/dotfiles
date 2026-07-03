@@ -1,3 +1,4 @@
+require("plugins.blink")
 require("plugins.conform")
 require("plugins.fzf")
 require("plugins.lsp")
