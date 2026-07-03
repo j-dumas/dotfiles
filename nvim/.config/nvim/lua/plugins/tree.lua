@@ -39,6 +39,7 @@ require("neo-tree").setup({
     window = {
         mappings = {
             ["<cr>"] = "open_with_window_picker",
+            ["<2-LeftMouse>"] = "open_with_window_picker",
             ["s"] = "split_with_window_picker",
             ["v"] = "vsplit_with_window_picker",
             ["S"] = "noop",
@@ -46,3 +47,11 @@ require("neo-tree").setup({
         },
     },
 })
+
+local opts = function(desc)
+            return { desc = "Neotree: " .. desc }
+        end
+local map = vim.keymap.set
+
+map("n", "<leader>e", "<cmd>Neotree toggle reveal=true<cr>", opts("Focus Explorer"))
+map("n", "<leader>b", "<cmd>Neotree focus source=buffers<cr>", opts("Focus Buffers"))
