@@ -34,6 +34,10 @@
       "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
+    "nvim-file-operations": {
+      "rev": "8c4fe8e06c047cf72c7dcd05b301dcf15c91eb02",
+      "src": "https://github.com/Crysthamus/nvim-file-operations"
+    },
     "nvim-lspconfig": {
       "rev": "dd1c9b802c943278179a5d819369cda085b79d45",
       "src": "https://github.com/neovim/nvim-lspconfig"

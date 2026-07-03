@@ -1,5 +1,6 @@
 vim.pack.add({
     "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/Crysthamus/nvim-file-operations",
 })
 
 local map = vim.keymap.set
@@ -60,3 +61,8 @@ vim.lsp.config("pylsp", {
 })
 
 lsp.enable({ "lua_ls", "clangd", "pylsp" })
+
+require("nvim-file-operations").setup()
+vim.lsp.config("*", {
+  capabilities = require("nvim-file-operations.config").default_capabilities(),
+})
