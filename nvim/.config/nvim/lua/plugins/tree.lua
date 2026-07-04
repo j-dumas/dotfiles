@@ -53,5 +53,6 @@ local opts = function(desc)
         end
 local map = vim.keymap.set
 
-map("n", "<leader>e", "<cmd>Neotree toggle reveal=true<cr>", opts("Focus Explorer"))
+map("n", "<C-n>", "<cmd>Neotree toggle reveal=true<cr>", opts("Toggle Explorer"))
+map("n", "<leader>e", "<cmd>Neotree focus<cr>", opts("Focus Explorer"))
 map("n", "<leader>b", "<cmd>Neotree focus source=buffers<cr>", opts("Focus Buffers"))
