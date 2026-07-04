@@ -1,5 +1,5 @@
 require("plugins.blink")
-require("plugins.conform")
+require("plugins.format")
 require("plugins.fzf")
 require("plugins.git")
 require("plugins.lsp")
