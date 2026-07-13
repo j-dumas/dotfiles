@@ -64,7 +64,16 @@ vim.lsp.config("pylsp", {
 
 lsp.enable({ "lua_ls", "clangd", "pylsp" })
 
+vim.diagnostic.config({
+    virtual_lines = {
+        format = function(diagnostic)
+            -- Only show the message, hide the code
+            return diagnostic.message
+        end,
+    },
+})
+
 require("nvim-file-operations").setup()
 vim.lsp.config("*", {
-  capabilities = require("nvim-file-operations.config").default_capabilities(),
+    capabilities = require("nvim-file-operations.config").default_capabilities(),
 })
