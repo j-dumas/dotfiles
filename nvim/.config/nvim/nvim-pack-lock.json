@@ -5,9 +5,17 @@
       "src": "https://github.com/Saghen/blink.cmp",
       "version": "'v1'"
     },
+    "blink.compat": {
+      "rev": "1454f14a8d855a578ceeba77c62538fa1459a67c",
+      "src": "https://github.com/Saghen/blink.compat"
+    },
     "catppuccin": {
       "rev": "0303a7208dba448c459767486a38a6ec05c4216b",
       "src": "https://github.com/catppuccin/nvim"
+    },
+    "cmp-vimtex": {
+      "rev": "c09ca05bfa0641754516f13294d73d3799a02fc8",
+      "src": "https://github.com/micangl/cmp-vimtex"
     },
     "conform.nvim": {
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
@@ -24,6 +32,10 @@
     "lazygit.nvim": {
       "rev": "a04ad0dbc725134edbee3a5eea29290976695357",
       "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
+    "ltex_extra.nvim": {
+      "rev": "49ea83c231139d98b7c9668c99e7b4591421b056",
+      "src": "https://github.com/barreiroleo/ltex_extra.nvim"
     },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
@@ -66,6 +78,10 @@
     "tree-sitter-manager.nvim": {
       "rev": "ae305699da5e97b6cffdd5cc6f6045b1b0bd26ea",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    },
+    "vimtex": {
+      "rev": "a5949d2800c1866c878956d49c51fc8d003c6b99",
+      "src": "https://github.com/lervag/vimtex"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
