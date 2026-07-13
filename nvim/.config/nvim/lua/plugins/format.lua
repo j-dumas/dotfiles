@@ -5,7 +5,9 @@ vim.pack.add({
 local conform = require("conform")
 conform.setup({
     formatters_by_ft = {
-        lua = { "stylua" },
+        lua = { "stylua" }, -- Installed with mise
+        c = { "clang_format" }, -- Installed with package manager
+        tex = { "latexindent" }, -- Installed with tlmgr
     },
     default_format_opts = {
         lsp_format = "fallback",

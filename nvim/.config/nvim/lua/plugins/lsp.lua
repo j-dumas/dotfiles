@@ -35,12 +35,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local lsp = vim.lsp
 
+-- Installed with mise
 lsp.config("lua_ls", {
     settings = {
         Lua = { diagnostics = { globals = { "vim" } } },
     },
 })
 
+-- Installed with package manager
 vim.lsp.config("clangd", {
     cmd = { "clangd", "--enable-config" },
 })
