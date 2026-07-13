@@ -1,4 +1,4 @@
-require("plugins.blink")
+require("plugins.cmp")
 require("plugins.format")
 require("plugins.fzf")
 require("plugins.git")
