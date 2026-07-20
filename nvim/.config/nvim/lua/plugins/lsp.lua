@@ -62,7 +62,7 @@ vim.lsp.config("pylsp", {
     },
 })
 
-lsp.enable({ "lua_ls", "clangd", "pylsp" })
+lsp.enable({ "lua_ls", "clangd", "pylsp", "zls" })
 
 vim.diagnostic.config({
     virtual_lines = {
