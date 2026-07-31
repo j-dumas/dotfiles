@@ -16,6 +16,9 @@ conform.setup({
         stylua = {
             prepend_args = { "--indent-type", "Spaces" },
         },
+        latexindent = {
+            prepend_args = { "-c", "build" },
+        },
     },
 })
 
