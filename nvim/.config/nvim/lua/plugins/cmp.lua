@@ -2,6 +2,7 @@ vim.pack.add({
     { src = "https://github.com/Saghen/blink.cmp", version = "v1" },
     "https://github.com/Saghen/blink.compat",
     "https://github.com/micangl/cmp-vimtex",
+    "https://github.com/rafamadriz/friendly-snippets"
 })
 
 require("blink.compat").setup()
@@ -21,7 +22,7 @@ blink.setup({
     },
     completion = {
         list = {
-            selection = { preselect = false, auto_insert = true },
+            selection = { preselect = true, auto_insert = true },
         },
     },
     sources = {
