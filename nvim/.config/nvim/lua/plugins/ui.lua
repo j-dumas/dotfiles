@@ -5,6 +5,7 @@ vim.pack.add({
     },
     "https://github.com/nvim-tree/nvim-web-devicons",
     "https://github.com/nvim-lualine/lualine.nvim",
+    "https://github.com/akinsho/bufferline.nvim",
 })
 
 require("catppuccin").setup({
@@ -58,3 +59,30 @@ require("lualine").setup({
     },
     extensions = { "nvim-tree" },
 })
+
+vim.opt.termguicolors = true
+require("bufferline").setup({
+    options = {
+        mode = "tabs",
+        diagnostics = "nvim_lsp",
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = function()
+                    return vim.fn.getcwd()
+                end,
+                highlight = "Directory",
+                text_align = "left",
+            },
+        },
+        name_formatter = function(buf)
+            return tostring(vim.api.nvim_tabpage_get_number(buf.tabnr)) .. ": " .. buf.name
+        end
+    },
+})
+
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>")
+vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>")
+vim.keymap.set("n", "<leader>to", "<cmd>tabonly<CR>")
+vim.keymap.set("n", "<Tab>", "<cmd>tabnext<CR>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>tabprevious<CR>")
