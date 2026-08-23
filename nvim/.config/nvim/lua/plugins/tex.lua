@@ -23,25 +23,26 @@ vim.pack.add({
 -- ltex-ls-plus was installed with mise use -g github:ltex-plus/ltex-ls-plus
 vim.lsp.config("ltex_plus", {
     autostart = false,
+    filetypes = { "bib", "markdown", "tex", "plaintex" },
+    settings = {
+        ltex = {
+            language = "en-CA",
+            additionalRules = {
+                motherTongue = "fr",
+                enablePickyRules = true,
+            },
+            enabled = { "bibtex", "markdown", "tex", "latex" },
+        },
+    },
+
     on_attach = function()
         require("ltex_extra").setup({
             load_langs = { "fr", "en-CA" },
             path = vim.fn.stdpath("data") .. "/ltex",
         })
     end,
-    filetypes = { "bib", "markdown", "tex", "plaintex" },
-    settings = {
-        ltex = {
-            language = { "en-CA" },
-            additionalRules = {
-                motherTongue = { "fr" },
-                enablePickyRules = true,
-            },
-            enabled = { "bibtex", "markdown", "tex", "latex" },
-        },
-    },
 })
 
 vim.api.nvim_create_user_command("LtexStart", function()
-  vim.lsp.enable("ltex_plus")
+    vim.lsp.enable("ltex_plus")
 end, {})
