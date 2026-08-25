@@ -37,3 +37,4 @@ vim.o.signcolumn = "yes"
 vim.o.termguicolors = true
 vim.opt.whichwrap:append("<>[]hl")
 vim.o.winborder = "rounded"
+vim.o.showmode = false
