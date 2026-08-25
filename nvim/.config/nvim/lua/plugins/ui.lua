@@ -81,8 +81,9 @@ require("bufferline").setup({
     },
 })
 
-vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>")
-vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>")
-vim.keymap.set("n", "<leader>to", "<cmd>tabonly<CR>")
-vim.keymap.set("n", "<Tab>", "<cmd>tabnext<CR>")
-vim.keymap.set("n", "<S-Tab>", "<cmd>tabprevious<CR>")
+local map = vim.keymap.set
+map("n", "<leader>tn", "<cmd>tabnew<CR>")
+map("n", "<leader>tc", "<cmd>tabclose<CR>")
+map("n", "<leader>to", "<cmd>tabonly<CR>")
+map("n", "<Tab>", "<cmd>tabnext<CR>")
+map("n", "<S-Tab>", "<cmd>tabprevious<CR>")
