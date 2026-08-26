@@ -82,12 +82,22 @@ require("bufferline").setup({
     },
 })
 
+
+local fzf = require("fzf-lua")
+
+local opts = function(desc)
+    return { desc = "Tab: " .. desc }
+end
+
 local map = vim.keymap.set
-map("n", "<leader>tn", "<cmd>tabnew<CR>")
-map("n", "<leader>tc", "<cmd>tabclose<CR>")
-map("n", "<leader>to", "<cmd>tabonly<CR>")
-map("n", "<Tab>", "<cmd>tabnext<CR>")
-map("n", "<S-Tab>", "<cmd>tabprevious<CR>")
+map("n", "<leader>tn", function()
+    vim.cmd("tabnew")
+    fzf.files()
+end, opts("New tab"))
+map("n", "<leader>tc", "<cmd>tabclose<CR>", opts("Close tab"))
+map("n", "<leader>to", "<cmd>tabonly<CR>", opts("Keep only this tab"))
+map("n", "<Tab>", "<cmd>tabnext<CR>", opts("Next tab"))
+map("n", "<S-Tab>", "<cmd>tabprevious<CR>", opts("Previous tab"))
 
 local notify = require("notify")
 notify.setup({
