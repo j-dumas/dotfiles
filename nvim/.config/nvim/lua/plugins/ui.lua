@@ -18,6 +18,8 @@ require("catppuccin").setup({
             IncSearch = { bg = colors.green },
             NormalFloat = { bg = colors.none },
             FloatBorder = { bg = colors.none },
+            LineNr = { fg = colors.overlay1 },
+            CursorLineNr = { fg = colors.yellow, bold = true },
         }
     end,
     integrations = {
@@ -81,7 +83,6 @@ require("bufferline").setup({
         end,
     },
 })
-
 
 local fzf = require("fzf-lua")
 
