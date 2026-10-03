@@ -101,5 +101,7 @@ eval "$(starship init zsh)"
 # Created by `pipx` on 2026-02-12 16:27:58
 export PATH="$PATH:/home/jdumas/.local/bin"
 
+export PICO_SDK_PATH="/home/jdumas/pico/pico-sdk/"
+
 # Mise activation
 eval "$(mise activate zsh)"
