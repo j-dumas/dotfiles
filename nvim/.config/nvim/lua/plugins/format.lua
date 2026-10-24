@@ -8,6 +8,7 @@ conform.setup({
         lua = { "stylua" }, -- Installed with mise
         c = { "clang_format" }, -- Installed with package manager
         tex = { "latexindent" }, -- Installed with tlmgr
+        cmake = { "cmake_format" }, -- Installed with package manager (cmakelang)
     },
     default_format_opts = {
         lsp_format = "fallback",
